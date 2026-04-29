@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ReturnRequest; // Asumsi nama model ReturnRequest untuk menghindari reserved word
+use App\Models\ReturnRequest;
 use Illuminate\Http\Request;
 
 class ReturnController extends Controller
