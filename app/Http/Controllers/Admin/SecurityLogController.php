@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\SecurityLog; // Pastikan Model ini sudah ada
+use App\Models\SecurityLog;
 use Illuminate\Http\Request;
 
 class SecurityLogController extends Controller
