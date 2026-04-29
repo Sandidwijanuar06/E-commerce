@@ -9,26 +9,22 @@ use Illuminate\Support\Str;
 
 class CouponController extends Controller
 {
-    /**
-     * Menampilkan daftar kupon.
-     */
+    //menampilkan data coupons
     public function index()
     {
         $coupons = Coupon::latest()->get();
         return view('admin.marketing.coupons', compact('coupons'));
     }
-
-    /**
-     * Menampilkan form pembuatan kupon.
-     */
+    
+      //Menampilkan form pembuatan kupon.
+     
     public function create()
     {
         return view('admin.marketing.create');
     }
-
-    /**
-     * Menyimpan kupon baru ke database.
-     */
+    
+    //Menyimpan kupon baru ke database.
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -89,9 +85,8 @@ class CouponController extends Controller
         }
     }
 
-    /**
-     * Menghapus kupon.
-     */
+     //Menghapus kupon.
+     
     public function destroy(Coupon $coupon)
     {
         $coupon->delete();
