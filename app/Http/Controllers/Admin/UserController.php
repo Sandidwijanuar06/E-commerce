@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('admin.users.index', compact('users', 'roles'));
     }
 
-    public function update(Request $request, User $user) // <-- Tanda $ sudah ditambahkan
+    public function update(Request $request, User $user) 
     {
         $request->validate([
             'roles' => 'required|array'
