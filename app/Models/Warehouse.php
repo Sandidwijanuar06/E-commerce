@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Warehouse extends Model
+{
+    protected $fillable = ['name', 'code', 'address'];
+
+    /**
+     * Relasi ke Stock Ledger: Satu gudang memiliki banyak catatan mutasi stok.
+     */
+    public function stockLedgers(): HasMany
+    {
+        return $this->hasMany(StockLedger::class);
+    }
+}
