@@ -19,7 +19,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:categories,name',
-            'attributes' => 'nullable|array' // Memastikan input adalah array
+            'attributes' => 'nullable|array' 
         ]);
 
         // AMBIL DATA ARRAY DARI REQUEST TERLEBIH DAHULU
@@ -28,7 +28,6 @@ class CategoryController extends Controller
         Category::create([
             'name' => $request->name,
             'slug' => \Illuminate\Support\Str::slug($request->name),
-            // Gunakan array_filter pada variabel $attributes, bukan pada object request
             'attributes_definition' => array_filter($attributes), 
         ]);
 
@@ -38,7 +37,6 @@ class CategoryController extends Controller
     // Menampilkan halaman form edit kategori
     public function edit(Category $category)
     {
-        // Karena kita menggunakan EAV (JSON), pastikan data terkirim ke view
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -54,7 +52,6 @@ class CategoryController extends Controller
             $category->update([
                 'name' => $request->name,
                 'slug' => \Illuminate\Support\Str::slug($request->name),
-                // array_filter digunakan untuk menghapus input atribut yang kosong
                 'attributes_definition' => array_filter($request->input('attributes', [])),
             ]);
 
@@ -66,7 +63,6 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        // Opsional: Cek apakah kategori masih dipakai produk
         if ($category->products()->count() > 0) {
             return back()->with('error', 'Gagal hapus! Kategori ini masih memiliki produk.');
         }
