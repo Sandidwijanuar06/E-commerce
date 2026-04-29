@@ -8,31 +8,27 @@
 
 @section('css')
 <style>
-    /* Mengubah warna background sidebar menjadi Navy Gelap */
+    
     .main-sidebar { background-color: #0f172a !important; }
     
-    /* Branding CentralStore di Sidebar */
+    
     .brand-link { 
         border-bottom: 1px solid #1e293b !important; 
-        text-align: center; /* Opsional: agar logo di tengah */
+        text-align: center; 
     }
 
-    /* Warna Hitam untuk kata pertama */
-    /* Karena sidebar AdminLTE gelap, kita gunakan putih atau abu-abu terang agar terbaca, 
-       tapi jika kamu ingin tetap Hitam, gunakan #000000 */
     .brand-text-front { 
-        color: #ffffff !important; /* Saya sarankan putih/terang agar terlihat di sidebar navy */
+        color: #ffffff !important; 
         font-weight: 800;
     }
 
-    /* Warna Merah untuk kata kedua */
+    
     .brand-text-back { 
         color: #ff4757 !important; 
         font-weight: 800;
         margin-left: 2px;
     }
 
-    /* Tambahan agar teks menu tidak tabrakan */
     .sidebar-dark-danger .nav-sidebar > .nav-item > .nav-link {
         color: #cdd5e0;
     }
