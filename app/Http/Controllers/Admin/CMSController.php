@@ -41,7 +41,7 @@ class CMSController extends Controller
 
 
     // ===============================
-    // FIX BAGIAN UPDATE
+    //  UPDATE
     // ===============================
     public function update(Request $request, $id)
     {
